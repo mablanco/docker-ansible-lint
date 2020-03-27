@@ -10,6 +10,10 @@ This image uses a minimalistic approach. It's built upon Alpine Linux and Python
 
     $ docker run --rm mablanco/ansible-lint
 
+### Show version
+
+    $ docker run --rm mablanco/ansible-lint --version
+
 ### Check a playbook
 
     $ docker run --rm -v <playbooks_dir>:/app mablanco/ansible-lint --force-color ./playbook.yml
