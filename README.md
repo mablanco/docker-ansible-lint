@@ -12,15 +12,15 @@ This image uses a minimalistic approach. It's built upon Alpine Linux and Python
 
 ### Check a playbook
 
-    $ docker run --rm -v <playbooks_dir>:/home/ansible-lint mablanco/ansible-lint --force-color ./playbook.yml
+    $ docker run --rm -v <playbooks_dir>:/app mablanco/ansible-lint --force-color ./playbook.yml
 
 ### Batch check with find
 
-    $ docker run --rm -v <playbooks_dir>:/home/ansible-lint mablanco/ansible-lint --force-color $(find . -name "*.yml")
+    $ docker run --rm -v <playbooks_dir>:/app mablanco/ansible-lint --force-color $(find . -name "*.yml")
 
 ### Batch check with git ls-files
 
-    $ docker run --rm -v <playbooks_dir>:/home/ansible-lint mablanco/ansible-lint --force-color $(git ls-files "*.yml")
+    $ docker run --rm -v <playbooks_dir>:/app mablanco/ansible-lint --force-color $(git ls-files "*.yml")
 
 ### As Gitlab runner
 

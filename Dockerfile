@@ -13,6 +13,6 @@ RUN apk update && \
     apk add --no-cache --virtual .ansible-lint-rundeps $runDeps && \
     apk del .build-deps && \
     rm -rf ~/.cache/ /var/cache/apk/*
-WORKDIR /home/ansible-lint
+WORKDIR /app
 ENTRYPOINT ["/usr/local/bin/ansible-lint"]
 CMD ["--help"]
