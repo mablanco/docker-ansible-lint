@@ -1,9 +1,10 @@
 FROM python:3.9.1-alpine3.12
+ARG ANSIBLE_LINT_VERSION=4.2.0
 ENV ANSIBLE_LOCAL_TEMP /tmp
 RUN apk update && \
     apk add --no-cache --virtual .build-deps make gcc libc-dev openssl-dev python3-dev libffi-dev && \
     apk add --no-cache git && \
- 		pip3 install ansible-lint && \
+ 		pip3 install ansible-lint==$ANSIBLE_LINT_VERSION && \
     runDeps="$( \
       scanelf --needed --nobanner --recursive /usr/local \
       | awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
