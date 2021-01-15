@@ -16,4 +16,5 @@ RUN apk update && \
     apk del .build-deps && \
     rm -rf ~/.cache/ /var/cache/apk/*
 WORKDIR /app
-CMD ["/usr/local/bin/ansible-lint"]
+ENTRYPOINT ["/usr/local/bin/ansible-lint"]
+CMD ["--help"]
