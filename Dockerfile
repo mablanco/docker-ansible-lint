@@ -1,8 +1,8 @@
-FROM python:2.7-alpine
+FROM python:3.9.1-alpine3.12
 ENV ANSIBLE_LOCAL_TEMP /tmp
 RUN apk update && \
-    apk add --no-cache --virtual .build-deps make gcc libc-dev openssl-dev python-dev libffi-dev && \
- 		pip install ansible-lint && \
+    apk add --no-cache --virtual .build-deps make gcc libc-dev openssl-dev python3-dev libffi-dev && \
+ 		pip3 install ansible-lint && \
     runDeps="$( \
       scanelf --needed --nobanner --recursive /usr/local \
       | awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
