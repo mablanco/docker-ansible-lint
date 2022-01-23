@@ -3,7 +3,7 @@ ARG ANSIBLE_LINT_VERSION=5.3.2
 ENV ANSIBLE_LOCAL_TEMP /tmp
 RUN apk upgrade && \
     apk add --no-cache --virtual .build-deps make gcc libc-dev openssl-dev python3-dev libffi-dev && \
- 		pip3 install "ansible-lint[yamllint]==$ANSIBLE_LINT_VERSION" && \
+ 		pip3 install "ansible-lint[community,yamllint]==$ANSIBLE_LINT_VERSION" && \
     runDeps="$( \
       scanelf --needed --nobanner --recursive /usr/local \
       | awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
