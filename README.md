@@ -2,7 +2,7 @@
 
 Docker image for ansible-lint (<https://github.com/ansible/ansible-lint>), a tool that checks Ansible playbooks for practices and behaviour that could potentially be improved. These analysis can be run from the CLI and inside a CI/CD pipeline (e.g., as a GitLab runner).
 
-This image uses a minimalistic approach. It's built upon Alpine Linux and Python 2.7, so it has the smallest possible footprint when launched.
+This image uses a minimalistic approach. It's built upon Alpine Linux and Python 3, so it has the smallest possible footprint when launched.
 
 ## How to use this image
 
