@@ -1,7 +1,7 @@
-FROM python:3.9.1-alpine3.12
+FROM python:3.9.9-alpine3.15
 ARG ANSIBLE_LINT_VERSION=4.2.0
 ENV ANSIBLE_LOCAL_TEMP /tmp
-RUN apk update && \
+RUN apk upgrade && \
     apk add --no-cache --virtual .build-deps make gcc libc-dev openssl-dev python3-dev libffi-dev && \
  		pip3 install ansible-lint==$ANSIBLE_LINT_VERSION && \
     runDeps="$( \
