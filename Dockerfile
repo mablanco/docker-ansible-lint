@@ -1,6 +1,6 @@
-FROM python:3.9.9-alpine3.15
-ARG ANSIBLE_LINT_VERSION=5.3.2
-ENV ANSIBLE_LOCAL_TEMP /tmp
+FROM python:3.13.1-alpine3.21
+ARG ANSIBLE_LINT_VERSION=25.1.1
+ENV ANSIBLE_LOCAL_TEMP=/tmp
 RUN apk upgrade && \
     apk add --no-cache --virtual .build-deps make gcc libc-dev openssl-dev python3-dev libffi-dev && \
  		pip3 install "ansible-lint[community,yamllint]==$ANSIBLE_LINT_VERSION" && \
