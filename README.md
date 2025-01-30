@@ -8,28 +8,40 @@ This image uses a minimalistic approach. It's built upon Alpine Linux and Python
 
 ### Show help
 
-    $ docker run --rm mablanco/ansible-lint
+```bash
+~ docker run --rm mablanco/ansible-lint
+```
 
 ### Show version
 
-    $ docker run --rm mablanco/ansible-lint --version
+```bash
+~ docker run --rm mablanco/ansible-lint --version
+```
 
 ### Check a playbook
 
-    $ docker run --rm -v <playbooks_dir>:/app mablanco/ansible-lint --force-color -p ./playbook.yml
+```bash
+~ docker run --rm -v <playbooks_dir>:/app mablanco/ansible-lint --force-color -p ./playbook.yml
+```
 
 ### Batch check with find
 
-    $ docker run --rm -v <playbooks_dir>:/app mablanco/ansible-lint --force-color -p $(find . -name "*.yml")
+```bash
+~ docker run --rm -v <playbooks_dir>:/app mablanco/ansible-lint --force-color -p $(find . -name "*.yml")
+```
 
 ### Batch check with git ls-files
 
-    $ docker run --rm -v <playbooks_dir>:/app mablanco/ansible-lint --force-color -p $(git ls-files "*.yml")
+```bash
+~ docker run --rm -v <playbooks_dir>:/app mablanco/ansible-lint --force-color -p $(git ls-files "*.yml")
+```
 
 ### As Gitlab runner
 
-    ansible_linting
-      stage: lint
-      image: mablanco/ansible-lint
-      script:
-        - *.yml
+```yaml
+ansible_linting
+    stage: lint
+    image: mablanco/ansible-lint
+    script:
+    - *.yml
+```
