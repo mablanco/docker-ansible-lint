@@ -11,7 +11,7 @@ on:
 
 jobs:
   build-and-push:
-    uses: mablanco/shared-github-workflows/.github/workflows/docker-build-push.yml@main
+    uses: mablanco/shared-github-workflows/.github/workflows/docker-build-push.yml@feat/buildx-cache
     with:
       container-registry: docker.io
       image-name: mablanco/ansible-lint
